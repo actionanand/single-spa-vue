@@ -21,13 +21,13 @@ You can find the demo here: [Single-Spa-Demo App](https://ar-single-spa-demo.her
 ## How to run this repo locally
 
 ```bash
-npm run serve
+yarn serve
 ```
 
 ## How to build for production
 
 ```bash
-npm run build
+yarn build
 ```
 
 ## How to create single-spa frontend app
@@ -62,3 +62,6 @@ Each repo can be set up with [Travis CI](https://travis-ci.org/) for running job
 
 ### Customize configuration - vue
 See [Configuration Reference](https://cli.vuejs.org/config/).
+- [Guide to install 'Tailwind' in vue cli - 'vue-cli-plugin-tailwind'](https://www.npmjs.com/package/vue-cli-plugin-tailwind)
+- [Hero-icons for Vue '@heroicons/vue'](https://github.com/tailwindlabs/heroicons)
+- [Npm lib '@headlessui/vue'](https://www.npmjs.com/package/@headlessui/vue)
