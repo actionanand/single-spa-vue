@@ -67,48 +67,48 @@
 </template>
 
 <script>
-import Answer from './Answer.vue';
-import Loader from './Loader.vue';
-import { store } from '../store';
+  import Answer from './Answer.vue';
+  import Loader from './Loader.vue';
+  import { store } from '../store';
 
-export default {
-  components: {
-    Answer,
-    Loader,
-  },
-  data() {
-    return {
-      store,
-    };
-  },
-  created() {
-    this.store.getData();
-  },
-};
+  export default {
+    components: {
+      Answer,
+      Loader,
+    },
+    data() {
+      return {
+        store,
+      };
+    },
+    created() {
+      this.store.getData();
+    },
+  };
 </script>
 
 <style scoped>
-.grow-fade-enter-active {
-  transition: all 0.2s ease-out;
-}
-
-.grow-fade-leave-active {
-  transition: all 0.2s cubic-bezier(1, 0.5, 0.8, 1);
-}
-
-.grow-fade-enter-from,
-.grow-fade-leave-to {
-  opacity: 0;
-  transform: scale(0.8) translateY(60px);
-}
-.custom-height {
-  min-height: 73vh;
-}
-
-@media only screen and (max-width: 800px) {
-  .custom-height {
-    /* 92vh to make up for the toolbar in the mobile browser */
-    min-height: 92vh;
+  .grow-fade-enter-active {
+    transition: all 0.2s ease-out;
   }
-}
+
+  .grow-fade-leave-active {
+    transition: all 0.2s cubic-bezier(1, 0.5, 0.8, 1);
+  }
+
+  .grow-fade-enter-from,
+  .grow-fade-leave-to {
+    opacity: 0;
+    transform: scale(0.8) translateY(60px);
+  }
+  .custom-height {
+    min-height: 73vh;
+  }
+
+  @media only screen and (max-width: 800px) {
+    .custom-height {
+      /* 92vh to make up for the toolbar in the mobile browser */
+      min-height: 92vh;
+    }
+  }
 </style>

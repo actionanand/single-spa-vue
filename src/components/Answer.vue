@@ -1,18 +1,18 @@
 <script>
-import { store } from '.././store';
+  import { store } from '.././store';
 
-export default {
-  props: {
-    text: String,
-    isValidAnswer: Boolean,
-    isInvalidAnswer: Boolean,
-  },
-  data() {
-    return {
-      store,
-    };
-  },
-};
+  export default {
+    props: {
+      text: String,
+      isValidAnswer: Boolean,
+      isInvalidAnswer: Boolean,
+    },
+    data() {
+      return {
+        store,
+      };
+    },
+  };
 </script>
 
 <template>

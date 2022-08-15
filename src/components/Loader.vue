@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-screen flex justify-center items-center">
+  <div class="w-full loader-wrap flex justify-center items-center">
     <svg
       class="rotating w-10 h-10"
       xmlns="http://www.w3.org/2000/svg"
@@ -14,19 +14,24 @@
 </template>
 
 <script setup>
-// import { store } from '.././store';
+  // import { store } from '.././store';
 </script>
 
 <style scoped>
-@keyframes rotating {
-  from {
-    transform: rotate(0deg);
+  .loader-wrap {
+    min-height: 73vh;
   }
-  to {
-    transform: rotate(360deg);
+
+  @keyframes rotating {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
   }
-}
-.rotating {
-  animation: rotating 1s linear infinite;
-}
+
+  .rotating {
+    animation: rotating 1s linear infinite;
+  }
 </style>
