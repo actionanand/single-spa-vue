@@ -22,7 +22,6 @@
 
 
   export default {
-    // name: 'App',
     components: {
       Quiz,
       Options,
@@ -31,7 +30,8 @@
     props: ['name', 'myTitle'],
     data() {
       return {
-        store
+        store,
+        appName: 'Single-Spa Vue - Quiz'
       };
     },
     created() {
@@ -41,8 +41,9 @@
 
       this.utilSub = state$.pipe(debounceTime(0), take(1)).subscribe(async (resp) => {
         console.log('vue ', resp);
-        // paraNo = resp.data?.paraNo;
       });
+
+      document.title = this.appName;
     },
     beforeUnmount () {
       this.utilSub.unsubscribe();
