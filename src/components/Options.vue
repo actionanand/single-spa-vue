@@ -2,7 +2,7 @@
   <Loader v-if="store.loading"></Loader>
   <div v-else class="w-11/12 mx-auto grid grid-cols-1 gap-y-8 lg:w-5/12">
     <h1 class="text-center text-3xl my-12 font-bold">
-      Infinity<span class="text-green-500">Quiz</span>
+      {{props.title}}<span class="text-green-500">Quiz</span>
     </h1>
     <Listbox as="div" v-model="selectedCategory">
       <ListboxLabel class="block text-sm font-medium text-gray-700">
@@ -147,40 +147,42 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
-import {
-  Listbox,
-  ListboxButton,
-  ListboxLabel,
-  ListboxOption,
-  ListboxOptions,
-} from '@headlessui/vue';
-import { CheckIcon, SelectorIcon } from '@heroicons/vue/solid';
-import Loader from './Loader.vue';
-import { store } from '.././store';
+  import { ref, onMounted, defineProps } from 'vue';
+  import {
+    Listbox,
+    ListboxButton,
+    ListboxLabel,
+    ListboxOption,
+    ListboxOptions,
+  } from '@headlessui/vue';
+  import { CheckIcon, SelectorIcon } from '@heroicons/vue/solid';
+  import Loader from './Loader.vue';
+  import { store } from '.././store';
 
-const categories = ref(null);
-const selectedCategory = ref(null);
-const difficulties = ref(['easy', 'medium', 'hard']);
-const selectedDifficulty = ref('easy');
+  const categories = ref(null);
+  const selectedCategory = ref(null);
+  const difficulties = ref(['easy', 'medium', 'hard']);
+  const selectedDifficulty = ref('easy');
 
-onMounted(() => {
-  fetch('https://opentdb.com/api_category.php')
-    .then((res) => res.json())
-    .then((res) => {
-      categories.value = res.trivia_categories;
-      selectedCategory.value = res.trivia_categories[0].name;
-      store.loading = false;
-    });
-});
+  const props = defineProps(['title'])
 
-const startQuiz = () => {
-  const selectedCategoryId = categories.value.find(
-    (item) => item.name == selectedCategory.value
-  ).id;
-  store.startQuiz({
-    category: selectedCategoryId,
-    difficulty: selectedDifficulty,
+  onMounted(() => {
+    fetch('https://opentdb.com/api_category.php')
+      .then((res) => res.json())
+      .then((res) => {
+        categories.value = res.trivia_categories;
+        selectedCategory.value = res.trivia_categories[0].name;
+        store.loading = false;
+      });
   });
-};
+
+  const startQuiz = () => {
+    const selectedCategoryId = categories.value.find(
+      (item) => item.name == selectedCategory.value
+    ).id;
+    store.startQuiz({
+      category: selectedCategoryId,
+      difficulty: selectedDifficulty,
+    });
+  };
 </script>
