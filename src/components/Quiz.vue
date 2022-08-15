@@ -102,7 +102,7 @@ export default {
   transform: scale(0.8) translateY(60px);
 }
 .custom-height {
-  min-height: 100vh;
+  min-height: 73vh;
 }
 
 @media only screen and (max-width: 800px) {
