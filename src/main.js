@@ -2,6 +2,7 @@ import { h, createApp } from 'vue';
 import singleSpaVue from 'single-spa-vue';
 
 import App from './App.vue';
+import './assets/tailwind.css'
 
 const vueLifecycles = singleSpaVue({
   createApp,
