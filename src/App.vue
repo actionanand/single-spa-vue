@@ -1,12 +1,12 @@
 <template>
   <div>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <h4>Mounted {{ name }}</h4>
-  <div class="text-gray-700">
-    <Options v-if="store.step == 0"></Options>
-    <Quiz v-if="store.step == 1"></Quiz>
-    <Restart v-if="store.step == 2"></Restart>
-  </div>
+    <!-- <img alt="Vue logo" src="./assets/logo.png">
+    <h4>Mounted {{ name }}</h4> -->
+    <div class="text-gray-700">
+      <Options v-if="store.step == 0"></Options>
+      <Quiz v-if="store.step == 1"></Quiz>
+      <Restart v-if="store.step == 2"></Restart>
+    </div>
   </div>
 </template>
 
@@ -32,7 +32,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 /* #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

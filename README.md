@@ -73,3 +73,4 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - [Guide to install 'Tailwind' in vue cli - 'vue-cli-plugin-tailwind'](https://www.npmjs.com/package/vue-cli-plugin-tailwind)
 - [Hero-icons for Vue '@heroicons/vue'](https://github.com/tailwindlabs/heroicons)
 - [Npm lib '@headlessui/vue'](https://www.npmjs.com/package/@headlessui/vue)
+- [Open trivia api](https://opentdb.com/)

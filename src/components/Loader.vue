@@ -17,7 +17,7 @@
 // import { store } from '.././store';
 </script>
 
-<style>
+<style scoped>
 @keyframes rotating {
   from {
     transform: rotate(0deg);
