@@ -11,10 +11,15 @@
 </template>
 
 <script>
+import { debounceTime, take } from 'rxjs/operators';
+
+import { getData, state$ } from '@actionanand/utility';
+
 import Quiz from './components/Quiz.vue';
 import Options from './components/Options.vue';
 import Restart from './components/Restart.vue';
 import { store } from './store';
+
 
 export default {
   // name: 'App',
@@ -29,7 +34,21 @@ export default {
       store,
     };
   },
+  created() {
+    getData('/data').then((data) => {
+        console.log('vue ', data);
+      });
+
+    this.utilSub = state$.pipe(debounceTime(0), take(1)).subscribe(async (resp) => {
+      console.log('vue ', resp);
+      // paraNo = resp.data?.paraNo;
+    });
+  },
+  beforeUnmount () {
+    this.utilSub.unsubscribe();
+  }
 }
+
 </script>
 
 <style scoped>
