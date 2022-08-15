@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="quiz-wrapper">
     <!-- <img alt="Vue logo" src="./assets/logo.png">
     <h4>Mounted {{ name }}</h4> -->
     <div class="text-gray-700">
@@ -46,11 +46,16 @@ body {
   font-family: 'Epilogue';
   background-color: #f9f9f9;
 }
+
 input,
 textarea,
 button,
 select,
 a {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.quiz-wrapper {
+  min-height: 73vh;
 }
 </style>
