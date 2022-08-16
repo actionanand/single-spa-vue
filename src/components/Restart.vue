@@ -11,7 +11,7 @@
 
 <template>
   <div
-    class="text-gray-700 w/11-12 mx-auto flex flex-col items-center justify-center h-screen"
+    class="text-gray-700 w/11-12 mx-auto flex flex-col items-center justify-center quiz-restart-wrap"
   >
     <div class="pb-20 flex flex-col items-center">
       <h1 class="mb-8 text-center text-lg font-medium">
@@ -41,3 +41,8 @@
     </div>
   </div>
 </template>
+<style scoped>
+  .quiz-restart-wrap {
+    min-height: 73vh;
+  }
+</style>
